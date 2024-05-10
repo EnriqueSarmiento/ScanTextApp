@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+       TabView{
+          ScannerView().tabItem {
+             Label("Scan Text", systemImage: "doc.text.viewfinder")
+          }
+          QRView().tabItem {
+             Label("QR Code", systemImage: "qrcode.viewfinder")
+          }
+       }
     }
 }
